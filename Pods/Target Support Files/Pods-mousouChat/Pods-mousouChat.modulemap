@@ -1,0 +1,6 @@
+framework module Pods_mousouChat {
+  umbrella header "Pods-mousouChat-umbrella.h"
+
+  export *
+  module * { export * }
+}

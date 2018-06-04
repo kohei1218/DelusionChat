@@ -1,0 +1,37 @@
+PODS:
+  - Alamofire (4.7.2)
+  - IQKeyboardManagerSwift (6.0.2)
+  - Moya/Core (11.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (11.0.2):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - PromiseKit (6.2.5):
+    - PromiseKit/CorePromise (= 6.2.5)
+    - PromiseKit/Foundation (= 6.2.5)
+    - PromiseKit/UIKit (= 6.2.5)
+  - PromiseKit/CorePromise (6.2.5)
+  - PromiseKit/Foundation (6.2.5):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.2.5):
+    - PromiseKit/CorePromise
+  - Result (3.2.4)
+  - RxSwift (4.1.2)
+
+DEPENDENCIES:
+  - IQKeyboardManagerSwift
+  - Moya/RxSwift
+  - PromiseKit
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  IQKeyboardManagerSwift: 59d4b0e140bc546c3c76ae5bb35b3dafd10b8172
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  PromiseKit: a26828b0a8d5874960dfdb575b57a70790ec36f1
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+
+PODFILE CHECKSUM: bee72a05944696ffa944b963e13bab219c96e870
+
+COCOAPODS: 1.1.1
