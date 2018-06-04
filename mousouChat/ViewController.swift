@@ -36,6 +36,11 @@ class ViewController: UIViewController {
             saveApiKeyButton.isHidden = true
             apiKeyTextField.isHidden = true
         }
+        if (userDefaults.data(forKey: "image_data") != nil) {
+            let savedImage = UIImage(data: userDefaults.data(forKey: "image_data")!)
+            imageView.image = savedImage
+            imageView.contentMode = UIViewContentMode.scaleAspectFit
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,7 +72,30 @@ class ViewController: UIViewController {
     @IBAction func actionSaveApiKey(_ sender: Any) {
         userDefaults.set(self.apiKeyTextField.text, forKey: "api_key")
     }
+    
+    @IBAction func actionAddImage(_ sender: Any) {
+        let c = UIImagePickerController()
+        c.delegate = self
+        present(c, animated: true)
+    }
 }
+
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        let data = UIImagePNGRepresentation(image!)
+        userDefaults.set(data, forKey: "image_data")
+        print("image data:", userDefaults.data(forKey: "image_data"))
+        self.imageView.image = image
+        self.imageView.contentMode = UIViewContentMode.scaleAspectFit
+        picker.dismiss(animated: true, completion: nil)
+    }
+}
+
 
 
 
